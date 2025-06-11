@@ -1,37 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const events = [
-  {
-    title: "Tree Planting Campaign",
-    date: "June 15, 2025",
-    location: "Karura Forest, Nairobi",
-    description:
-      "Join us in planting 5,000 trees to restore green cover and promote biodiversity. All tools and seedlings will be provided.",
-  },
-  {
-    title: "Clean-Up Drive",
-    date: "July 6, 2025",
-    location: "Kibera Community Grounds",
-    description:
-      "We’re partnering with local youth groups to clean up waste and educate the community about plastic pollution.",
-  },
-  {
-    title: "Sustainable Living Workshop",
-    date: "August 10, 2025",
-    location: "NESDAN Headquarters + Online",
-    description:
-      "Learn practical ways to reduce your carbon footprint. Topics include composting, eco-friendly homes, and conscious shopping.",
-  },
-  {
-    title: "Green Tech Hackathon",
-    date: "September 1, 2025",
-    location: "JKUAT, Juja",
-    description:
-      "A 2-day innovation challenge bringing tech minds together to solve climate-related issues through software and hardware solutions.",
-  },
-];
-
 const cardVariants = {
   hidden: { opacity: 0, x: 100 },
   visible: (i) => ({
@@ -45,7 +14,8 @@ const cardVariants = {
   }),
 };
 
-const EventsActivities = () => {
+const EventsActivities = ({events}) => {
+    
   const [showAll, setShowAll] = useState(false);
 
   const visibleEvents = showAll ? events : events.slice(0, 3);

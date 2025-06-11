@@ -1,5 +1,6 @@
 import React from 'react';
 import image2 from '../images/image2.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -25,11 +26,16 @@ const Home = () => {
         </div>
 
         <div className="flex flex-row gap-4 justify-center md:justify-start mt-8">
+          <Link
+            to="/donate"
+            className="bg-yellow-400 text-green-900 font-bold px-4 py-2 rounded-md hover:bg-yellow-500 transition"
+          >
+            Donate
+          </Link>
           <button className="px-8 py-3 bg-yellow-400 text-green-900 font-bold rounded-lg hover:bg-yellow-500 transition">
-            Donate Now
-          </button>
-          <button className="px-8 py-3 bg-yellow-400 text-green-900 font-bold rounded-lg hover:bg-yellow-500 transition">
+            <a href='#about'>
             Learn More
+            </a>
           </button>
         </div>
       </div>

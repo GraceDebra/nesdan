@@ -6,7 +6,7 @@ const MissionVision = () => {
   return (
     <section id="mission-vision" className="bg-white py-20 px-6 md:px-16 text-green-900">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-10 text-green-800">Our Mission & Vision</h2>
+        <h2 className="text-3xl font-bold mb-10 text-green-800"> Mission & Vision</h2>
 
         {/* Mission Block */}
         <div className="flex flex-col md:flex-row items-center gap-6 mb-16">

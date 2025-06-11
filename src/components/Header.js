@@ -43,6 +43,12 @@ const Header = () => {
 >
   Donate
 </Link>
+<Link
+  to="/admin"
+  className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800"
+>
+  Admin
+</Link>
       </nav>
     </header>
   );

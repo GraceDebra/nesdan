@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaArrowUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -28,12 +29,12 @@ const Footer = () => {
           </a>
         </div>
 
-        <a
-          href="#donate"
-          className="bg-yellow-400 hover:bg-yellow-500 text-green-900 font-semibold px-5 py-2 rounded-lg transition duration-300"
-        >
-          Donate
-        </a>
+       <Link
+            to="/donate"
+            className="bg-yellow-400 text-green-900 font-bold px-4 py-2 rounded-md hover:bg-yellow-500 transition"
+          >
+            Donate
+          </Link>
       </div>
 
       {/* Back to Top Button */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './sections/Home';
@@ -9,9 +10,29 @@ import MissionVision from './sections/MissionVision';
 import Events from './sections/Events';
 import Blog from './sections/Blog';
 import Contact from './sections/Contact';
-import Donate from './sections/Donate'; // <-- Create this page
+import Donate from './sections/Donate';
+import AdminAddEvent from './sections/AddEvent';
+import './App.css'; 
+import Admin from './sections/Admin';
+import SinglePost from './sections/SinglePost';
 
 function App() {
+  const [events, setEvents] = useState([]);
+
+  const fetchEvents = () => {
+    fetch("http://127.0.0.1:5000/events")
+      .then((res) => res.json())
+      .then((data) => setEvents(data))
+      .catch((error) => console.error("Failed to fetch events:", error));
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+  const handleAddEvent = (newEvent) => {
+    setEvents((prev) => [...prev, newEvent]);
+  };
+
   return (
     <Router>
       <Routes>
@@ -25,7 +46,7 @@ function App() {
                 <Home />
                 <About />
                 <MissionVision />
-                <Events />
+                <Events events={events} />
                 <Blog />
                 <Contact />
               </main>
@@ -34,8 +55,14 @@ function App() {
           }
         />
 
-        {/* Dedicated donation page */}
+        {/* Individual pages */}
         <Route path="/donate" element={<Donate />} />
+        <Route
+          path="/admin"
+          element={<Admin />}
+        />
+        <Route path="/blog/:id" element={<SinglePost />} />
+
       </Routes>
     </Router>
   );
