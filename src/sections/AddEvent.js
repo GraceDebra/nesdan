@@ -16,7 +16,7 @@ const AdminAddEvent = ({ onAddEvent }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/events", {
+      const res = await fetch("https://nesdan-backend.onrender.com/events", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
