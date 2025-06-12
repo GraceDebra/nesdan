@@ -20,7 +20,7 @@ function App() {
   const [events, setEvents] = useState([]);
 
   const fetchEvents = () => {
-    fetch("http://127.0.0.1:5000/events")
+    fetch("https://nesdan-backend.onrender.com/events")
       .then((res) => res.json())
       .then((data) => setEvents(data))
       .catch((error) => console.error("Failed to fetch events:", error));
