@@ -14,13 +14,13 @@ const About = () => {
   <div className="md:w-1/2">
     <h2 className="text-3xl font-bold mb-6 text-green-800">About Us</h2>
         <p className="mb-4 text-lg leading-relaxed">
-          At <span className="font-semibold text-green-700">NESDAN</span> (National Environmental Sustainability & Development Action Network),
+          At <span className="font-semibold text-green-700">NESDAN</span> ,
           we are passionate about protecting the planet and promoting sustainable development for present and future generations. 
           Founded on the principles of environmental stewardship, community engagement, and climate action, our organization works 
           tirelessly to create awareness and implement practical solutions to today’s pressing environmental challenges.
         </p>
         <p className="mb-4 text-lg leading-relaxed">
-          Whether it’s reforestation, waste management education, clean energy advocacy, or grassroots empowerment,
+          Whether it is reforestation, waste management education, clean energy advocacy, or grassroots empowerment,
           NESDAN believes in the power of collective action. Our team is composed of dedicated volunteers, environmental scientists,
           educators, and activists who envision a greener, healthier, and more sustainable world.
         </p>

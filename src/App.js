@@ -15,6 +15,7 @@ import AdminAddEvent from './sections/AddEvent';
 import './App.css'; 
 import Admin from './sections/Admin';
 import SinglePost from './sections/SinglePost';
+import Login from './sections/Login';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -57,6 +58,7 @@ function App() {
 
         {/* Individual pages */}
         <Route path="/donate" element={<Donate />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/admin"
           element={<Admin />}
