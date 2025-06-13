@@ -7,7 +7,7 @@ const Admin = () => {
 
 
   const fetchEvents = async () => {
-    const res = await fetch('http://localhost:5000/events');
+    const res = await fetch('https://nesdan-backend.onrender.com/events');
     const data = await res.json();
     setEvents(data);
   };
@@ -18,7 +18,7 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this event?")) {
-      const res = await fetch(`http://localhost:5000/events/${id}`, {
+      const res = await fetch(`https://nesdan-backend.onrender.com/events/${id}`, {
         method: "DELETE",
       });
 
