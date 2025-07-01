@@ -51,7 +51,7 @@ const Header = () => {
             Donate
           </Link>
           <Link
-            to="/admin"
+            to="/login"
             className="p-2 rounded-full hover:bg-green-100 transition"
             title="Admin Dashboard"
           >

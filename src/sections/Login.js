@@ -7,21 +7,29 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    const res = await fetch('https://nesdan-backend.onrender.com/events', {
+  e.preventDefault();
+
+  try {
+    const res = await fetch('https://nesdan-backend.onrender.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
-    if (res.ok) {
-      localStorage.setItem('token', data.token);
-      navigate('/admin');
-    } else {
-      alert(data.error);
+    if (!res.ok) {
+      const errorData = await res.json();
+      alert(errorData.error || 'Login failed');
+      return;
     }
-  };
+
+    const data = await res.json();
+    localStorage.setItem('token', data.token);
+    navigate('/admin');
+  } catch (err) {
+    console.error("Login error:", err);
+    alert("Something went wrong. Please try again.");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-100 px-4">
