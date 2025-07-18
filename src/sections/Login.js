@@ -24,6 +24,7 @@ const Login = () => {
 
     const data = await res.json();
     localStorage.setItem('token', data.token);
+    // console.log("Login successful:", data);
     navigate('/admin');
   } catch (err) {
     console.error("Login error:", err);

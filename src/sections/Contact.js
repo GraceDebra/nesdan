@@ -19,10 +19,10 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-4">
             <p>
-              📍 <strong>Location:</strong> Nairobi, Kenya
+              📍 <strong>Location:</strong> Nyanza, Kenya
             </p>
             <p>
-              📞 <strong>Phone:</strong> +254 700 123 456
+              📞 <strong>Phone:</strong> +254 721780342
             </p>
             <p>
               📧 <strong>Email:</strong>{" "}
