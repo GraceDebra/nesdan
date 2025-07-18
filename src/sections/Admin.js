@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import config from '../config';
 import AddEventModal from '../components/AddEventModal';
 
-const API_BASE_URL = 'https://nesdan-backend.onrender.com';
 
 const Admin = () => {
   const [events, setEvents] = useState([]);
@@ -10,7 +10,7 @@ const Admin = () => {
   const fetchEvents = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${API_BASE_URL}/events`, {
+      const res = await fetch(`${config.API_BASE_URL}/events`, {
         headers: {
           'Authorization': token,
         },
@@ -39,7 +39,7 @@ const Admin = () => {
     const token = localStorage.getItem('token');
     if (window.confirm('Are you sure you want to delete this event?')) {
       try {
-        const res = await fetch(`${API_BASE_URL}/events/${id}`, {
+        const res = await fetch(`${config.API_BASE_URL}/events/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': token,
