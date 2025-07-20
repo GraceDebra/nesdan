@@ -14,6 +14,26 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} <span className="font-semibold">NESDAN</span>. All rights reserved.
         </p>
 
+        <div className="flex flex-col md:flex-row items-center gap-4 text-sm mt-2">
+        <a
+          href="/nesdan_certificate_of_Reg.jpeg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline hover:text-green-300"
+        >
+          View Certificate of Registration
+        </a>
+        <span className="hidden md:inline">|</span>
+        <a
+          href="/documents/certificate.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline hover:text-green-300"
+        >
+          View Constitution
+        </a>
+      </div>
+    
         <div className="flex space-x-4 text-xl">
           <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" className="hover:text-green-300">
             <FaFacebookF />
@@ -48,5 +68,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
